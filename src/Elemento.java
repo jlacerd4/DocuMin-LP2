@@ -7,8 +7,10 @@ public class Elemento {
     private HashMap<String, String> propriedades = new HashMap<>();
 
 
-    public Elemento(){
-        
+    public Elemento(int prioridade, String valor, HashMap<String, String> propriedades){
+        this.prioridade = prioridade;
+        this.valor = valor;
+        this.propriedades = propriedades;
     }
 
     /*
