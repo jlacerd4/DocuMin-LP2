@@ -1,3 +1,4 @@
+import javax.print.Doc;
 import java.util.HashSet;
 
 public class Facade {
@@ -26,14 +27,27 @@ public class Facade {
         //  return this.documentoController.criarDocumento(titulo);
     }
 
+
+    public String pegarRepresentacaoCompleta(String tituloDoc, int elementoPosicao){
+        System.out.println(DocumentoController.pegarRepresentacaoCompleta(tituloDoc, elementoPosicao));
+    }
+
     //ver se é correto ter esse método na facade
     public void removerDocumento(String titulo){
         documentoController.removeDocumento(titulo);
     }
 
-    public int contarElementos(String titulo){}
+    //public int contarElementos(String titulo){}
 
-    public String[] exibirDocumento(String titulo){}
+    //public String[] exibirDocumento(String titulo){}
+
+    public void moverParaCima(String tituloDoc, int elementoPosicao){
+        DocumentoController.moverParaCima(tituloDoc, elementoPosicao);
+    }
+
+    public static void moverParaBaixo(String tituloDoc, int elementoPosicao){
+        DocumentoController.moverParaBaixo(tituloDoc, elementoPosicao);
+    }
 
     /*
     É possível também remover um documento do sistema a partir de seu título. Além disso, deve ser possível retornar

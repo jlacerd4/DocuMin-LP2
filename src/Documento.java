@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -31,14 +32,34 @@ public class Documento {
         return elementos.indexOf(elemento);
     }
 
-    public moverElementoAcima
+
+    public void moverParaCima(int indElemento){
+        if(indElemento == 0){
+            throw new IllegalArgumentException("Elemento no índice 0. Não há elementos mais próximos do início.");
+        }else{
+            Collections.swap(elementos, indElemento, indElemento-1);
+        }
+    }
+
+    public String pegarRepresentacaoCompleta(int elementoPosicao){
+
+    }
+
+    public void moverParaBaixo(int indElemento) {
+        if(indElemento == elementos.size() - 1){
+            throw new IllegalArgumentException( "Elemento no último índice da Lista." +
+                                                "Não há elementos mais próximos do final.");
+        }else{
+            Collections.swap(elementos, indElemento, indElemento+1);
+        }
+    }
 
     public int pegaQtdeElementos(){
         return elementos.size();
     }
 
-    /*
 
+    /*
     Por fim, um documento pode retornar sua representação em um array de strings que representam seus elementos.
     Cada componente do array é a representação textual do elemento na mesma posição daquele documento. Ainda,
     o array deve ter o mesmo tamanho do número de elementos presentes no documento (independente do seu limite de
@@ -48,8 +69,9 @@ public class Documento {
     public String toString(){
 
     }
-
     */
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
